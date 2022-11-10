@@ -5,8 +5,6 @@
 
 > Search Engine(front-end) made with Typescript and React
 
-### 🏠 [Homepage](https://vertrical-engine-frontend.vercel.app/)
-
 ### ✨ [Demo](https://vertrical-engine-frontend.vercel.app/)
 
 ## Install
@@ -21,17 +19,24 @@ npm install
 npm run test
 ```
 
+## Run linting
+
+```sh
+npm run lint
+```
+
 ## Author
 
 👤 **César Rivera **
 
-* Website: http://react-final-pi.vercel.app/
-* Github: [@CesarAugusto316](https://github.com/CesarAugusto316)
-* LinkedIn: [@cesar rivera](https://linkedin.com/in/cesar rivera)
+- Website: http://react-final-pi.vercel.app/
+- Github: [@CesarAugusto316](https://github.com/CesarAugusto316)
+- LinkedIn: [@cesar rivera](https://linkedin.com/in/cesar rivera)
 
 ## Show your support
 
 Give a ⭐️ if this project helped you!
 
-***
+---
+
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
