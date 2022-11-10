@@ -2,6 +2,7 @@ import axios from 'axios';
 
 
 export interface Medicine {
+  id: number,
   title: string,
   photo: string,
   description: string,
