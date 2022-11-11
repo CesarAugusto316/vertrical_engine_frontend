@@ -16,6 +16,7 @@ class SearchService {
   private apiUrl: string = import.meta.env.VITE_API_URL;
 
   async queryMedicine(medicineQuery: string): Promise<{ medicines: Medicine[] }> {
+    console.log(this.apiUrl, medicineQuery);
     return new Promise((resolve, reject) => {
       axios.get(this.apiUrl + '/medicines/search', {
         params: {

@@ -1,0 +1,43 @@
+name: Continous Deployment
+# We manually deploy to Vercel after our code has been successfully
+# integrated to the main branch
+
+on:
+  pull_request:
+    types:
+      - closed
+
+env:
+  VITE_API_URL: ${{ secrets.VITE_API_URL }}
+  VERCEL_ACCESS_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+jobs:
+  test:
+    name: Testing the code after merging Pull Request
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: npm install
+      - run: npm run test:nowatch
+
+  deploy:
+    needs: [test]
+    name: "Deploy Vertrical front-end to Vercel"
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: snaplet/vercel-action@v2
+        with:
+          delete: true
+      - uses: amondnet/vercel-action@v25.1.0 #deploy
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }} # JnkHPrNnAhAy3BxgvKyvvOPn
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          vercel-args: '--prod'
