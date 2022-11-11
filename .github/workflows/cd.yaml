@@ -37,7 +37,7 @@ jobs:
           delete: true
       - uses: amondnet/vercel-action@v25.1.0 #deploy
         with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }} # JnkHPrNnAhAy3BxgvKyvvOPn
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           vercel-args: '--prod'
