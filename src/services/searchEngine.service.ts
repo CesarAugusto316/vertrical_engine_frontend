@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 
 
 export interface Medicine {
@@ -12,13 +12,21 @@ export interface Medicine {
   shortDescription: string
 }
 
+/**
+ * 
+ * Since we are using a free hosting service for the REST API, the API is
+ * set to sleep after 15 minutues of inactivity, if you face any issue, please
+ * just reload the page.
+ */
 class SearchService {
-  private apiUrl: string = import.meta.env.VITE_API_URL;
+  private http = axios.create({
+    baseURL: import.meta.env.VITE_API_URL,
+    timeout: 25_000,
+  });
 
   async queryMedicine(medicineQuery: string): Promise<{ medicines: Medicine[] }> {
-    console.log(this.apiUrl, medicineQuery);
     return new Promise((resolve, reject) => {
-      axios.get(this.apiUrl + '/medicines/search', {
+      this.http.get('/medicines/search', {
         params: {
           title: medicineQuery
         }
@@ -26,20 +34,19 @@ class SearchService {
         .then(({ data }) => {
           resolve(data);
         })
-        .catch(error => {
+        .catch((error: AxiosError) => {
           reject(error);
         });
     });
   }
 
   async getAllMedicines(): Promise<{ medicines: Medicine[] }> {
-    console.log(this.apiUrl);
     return new Promise((resolve, reject) => {
-      axios.get(this.apiUrl + '/medicines')
+      this.http.get('/medicines')
         .then(({ data }) => {
           resolve(data);
         })
-        .catch(error => {
+        .catch((error: AxiosError) => {
           reject(error);
         });
     });
