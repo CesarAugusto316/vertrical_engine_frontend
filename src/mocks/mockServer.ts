@@ -1,5 +1,5 @@
 import { setupServer } from 'msw/node';
 import { routeHandlers } from './medicineHandlers';
 
-// use for testing purposes
+// used for testing 
 export const mockServer = setupServer(...routeHandlers);

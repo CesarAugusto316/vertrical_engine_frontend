@@ -3,7 +3,11 @@ import { App } from './App';
 import './index.css';
 
 
-// https://mswjs.io/docs/getting-started/integrate/browser
+// API Mock Server Worker for Development
+if (import.meta.env.DEV) {
+  const { browserWorker } = await import('./mocks/browserWorker');
+  browserWorker.start();
+}
 
 ReactDOM
   .createRoot(document.getElementById('root') as HTMLElement)
