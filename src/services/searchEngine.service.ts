@@ -4,19 +4,22 @@ import axios from 'axios';
 export interface Medicine {
   id: number,
   title: string,
-  photo: string,
+  photo: {
+    url: string,
+    id: string
+  },
   description: string,
   shortDescription: string
 }
 
-export class SearchEngine {
-  apiUrl: string = import.meta.env.API_URL;
+class SearchService {
+  private apiUrl: string = import.meta.env.VITE_API_URL;
 
-  async getMedicine(medicineQuery: string): Promise<Medicine[]> {
+  async queryMedicine(medicineQuery: string): Promise<{ medicines: Medicine[] }> {
     return new Promise((resolve, reject) => {
-      axios.get<Medicine[]>(this.apiUrl, {
+      axios.get(this.apiUrl + '/medicines/search', {
         params: {
-          s: medicineQuery
+          title: medicineQuery
         }
       })
         .then(({ data }) => {
@@ -27,4 +30,19 @@ export class SearchEngine {
         });
     });
   }
+
+  async getAllMedicines(): Promise<{ medicines: Medicine[] }> {
+    console.log(this.apiUrl);
+    return new Promise((resolve, reject) => {
+      axios.get(this.apiUrl + '/medicines')
+        .then(({ data }) => {
+          resolve(data);
+        })
+        .catch(error => {
+          reject(error);
+        });
+    });
+  }
 }
+
+export default new SearchService();

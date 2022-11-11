@@ -1,8 +1,17 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import { Navbar } from './components';
+import searchService from './services/searchEngine.service';
 
 
 export const App: FC = () => {
+
+  useEffect(() => {
+    searchService.getAllMedicines()
+      .then(res => {
+        console.log(res);
+      });
+  }, []);
+
   return (
     <div className="app">
       <Navbar></Navbar>
