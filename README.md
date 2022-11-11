@@ -25,6 +25,13 @@ npm run test
 npm run lint
 ```
 
+## Vercel config
+
+```sh
+# to link our local project to a Vercel Project (requires permisions)
+vercel link
+```
+
 ## Author
 
 👤 **César Rivera **
