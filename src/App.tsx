@@ -1,31 +1,32 @@
-import { FC, useEffect } from 'react';
+import { FC } from 'react';
+import {
+  Routes, Route, useLocation,
+} from 'react-router-dom';
+import '@animxyz/core';
+import { XyzTransition } from '@animxyz/react';
 import { Navbar } from './components';
-import searchService from './services/searchEngine.service';
+import { Home, MedicineDetails } from './pages';
 
 
 export const App: FC = () => {
-
-  useEffect(() => {
-    searchService.getAllMedicines()
-      .then(res => {
-        console.log(res);
-      });
-  }, []);
+  const location = useLocation();
 
   return (
     <div className="app">
-      <Navbar></Navbar>
-      <main>
+      <Navbar />
 
-        <form action="" role="form">
-          <label htmlFor="search"></label>
-          <input type="text" name="search" id="search" />
-        </form>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore eum,
-          laborum nemo quidem accusamus modi error suscipit earum a accusantium
-          perferendis. Quas atque vitae officiis non! Voluptas sit sunt facilis!
-        </p>
-      </main>
+      <XyzTransition
+        appear
+        xyz="fade small-5 in-down-25% out-up-25% duration-4 ease-out"
+        mode="out-in"
+      >
+        <div key={location.key} className="section">
+          <Routes location={location}>
+            <Route path="/" element={<Home />} />
+            <Route path="/medicine-details" element={<MedicineDetails />} />
+          </Routes>
+        </div>
+      </XyzTransition>
     </div>
   );
 };
