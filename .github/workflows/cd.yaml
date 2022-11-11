@@ -9,8 +9,6 @@ on:
 
 env:
   VITE_API_URL: ${{ secrets.VITE_API_URL }}
-  VERCEL_ACCESS_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
 jobs:
   test:
@@ -32,9 +30,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: snaplet/vercel-action@v2
-        with:
-          delete: true
       - uses: amondnet/vercel-action@v25.1.0 #deploy
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
