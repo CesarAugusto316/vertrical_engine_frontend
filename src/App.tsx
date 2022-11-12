@@ -4,7 +4,7 @@ import {
 } from 'react-router-dom';
 import '@animxyz/core';
 import { XyzTransition } from '@animxyz/react';
-import { Navbar } from './components';
+import { Navbar, Layout } from './components';
 import { Home, MedicineDetails } from './pages';
 
 
@@ -12,7 +12,7 @@ export const App: FC = () => {
   const location = useLocation();
 
   return (
-    <div className="app">
+    <Layout>
       <Navbar />
 
       <XyzTransition
@@ -27,6 +27,6 @@ export const App: FC = () => {
           </Routes>
         </div>
       </XyzTransition>
-    </div>
+    </Layout>
   );
 };

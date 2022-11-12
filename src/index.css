@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 
 :root {
   font-size: 62.5%;
   box-sizing: border-box;
-  --font-family: "Poppins", sans-serif;
+  --font-family: "DM Sans", sans-serif;
   --primary: rgb(55, 124, 251);
   --primary-focus: rgb(5, 87, 240);
   --primary-content: rgb(28, 40, 63);
@@ -16,6 +16,7 @@
   --primary-shadow: rgba(3, 69, 190, 0.6);
 }
 
+/* 
 [data-theme="dark"] {
   --base-100: rgb(23, 27, 35);
   --base-150: rgb(42, 48, 60);
@@ -24,7 +25,7 @@
   --base-400: rgb(15, 15, 27);
   --base-content: rgb(166, 173, 186);
   --base-shadow: rgba(35, 35, 35, 0.4);
-}
+} */
 
 [data-theme="light"] {
   --base-100: rgb(253, 253, 253);
@@ -32,7 +33,7 @@
   --base-200: rgb(230, 230, 230);
   --base-300: rgb(207, 207, 207);
   --base-400: rgb(184, 185, 190);
-  --base-content: rgb(59, 62, 95);
+  --base-content: rgb(113, 161, 164);
   --base-shadow: rgba(46, 55, 74, 0.1);
 }
 
@@ -48,21 +49,9 @@
   user-select: none;
 }
 
-.app {
-  font-family: var(--font-family);
-  color: var(--base-content);
-  font-size: 1.6rem;
-  background-color: var(--base-150);
-  min-height: 100vh;
-  width: 100%;
-  overflow-x: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
 ::-webkit-scrollbar {
   appearance: none;
-  width: 14px;
+  width: 10px;
   background-color: var(--base-200);
 }
 
@@ -83,6 +72,13 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+.section {
+  height: 100%;
+  max-width: 100%;
+  margin-top: 6.2rem;
+  padding: 4rem;
 }
 
 *:focus {

@@ -1,0 +1,13 @@
+.layout {
+  font-family: var(--font-family);
+  color: var(--base-content);
+  font-size: 1.6rem;
+  background-color: var(--base-100);
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  background: url("../../assets/hero-pattern.svg"),
+    url("../../assets/pattern-bg@2x.png"), rgba(203, 232, 229, 0.44);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
