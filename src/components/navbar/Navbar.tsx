@@ -7,7 +7,7 @@ import './navbar.css';
 export const Navbar: FC = () => {
 
   return (
-    <nav className="navbar">
+    <nav className="navbar" role="navigation">
       <a className="navbar__logo" href="https://vertrical.com/">
         <img src={vertricalLogo} alt="vertrical-logo" />
       </a>

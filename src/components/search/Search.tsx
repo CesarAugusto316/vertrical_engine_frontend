@@ -3,29 +3,27 @@ import { Form, Formik, Field, FieldProps } from 'formik';
 import * as Yup from 'yup';
 import './search.css';
 import { FaSearch } from 'react-icons/fa';
+import { useMedicines } from '../../context/MedicineProvider';
 
-
-const initialValues = {
-  title: ''
-};
 
 const validationSchemma = Yup.object({
   title: Yup.string().min(1, 'can not be empty').required('required')
 });
 
 export const Search: FC = () => {
+  const { fetchMedicines } = useMedicines();
+
   return (
     <Formik
-      initialValues={initialValues}
+      initialValues={{ title: '' }}
       validationSchema={validationSchemma}
       onSubmit={(values, { resetForm, setSubmitting }) => {
-        console.log(values);
-
+        fetchMedicines(values.title);
         resetForm();
         setSubmitting(false);
       }}>
-      <Form className="form" action="" role="form">
-        <div className="form__label">
+      <Form className="form" role="form">
+        <label className="form__label">
           <Field name="title">
             {({ field }: FieldProps) => (
               <input
@@ -36,8 +34,8 @@ export const Search: FC = () => {
               />
             )}
           </Field>
-        </div>
-        <button className="form__btn" type="submit">
+        </label>
+        <button className="form__btn" type="submit" title="search">
           <FaSearch className="icon-search" />
         </button>
       </Form>
