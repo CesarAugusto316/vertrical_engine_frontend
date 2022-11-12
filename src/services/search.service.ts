@@ -51,6 +51,18 @@ class SearchService {
         });
     });
   }
+
+  async getMedicineByID(id: string): Promise<{ medicine: Medicine }> {
+    return new Promise((resolve, reject) => {
+      this.http.get(`/medicines/${id}`)
+        .then(({ data }) => {
+          resolve(data);
+        })
+        .catch((error: AxiosError) => {
+          reject(error);
+        });
+    });
+  }
 }
 
 export default new SearchService();

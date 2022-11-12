@@ -17,13 +17,13 @@ export const App: FC = () => {
 
       <XyzTransition
         appear
-        xyz="fade small-5 in-down-25% out-up-25% duration-4 ease-out"
+        xyz="fade small-5 in-left-25% out-right-25% duration-4 ease-out"
         mode="out-in"
       >
         <div key={location.key} className="section">
           <Routes location={location}>
             <Route path="/" element={<Home />} />
-            <Route path="/medicine-details" element={<MedicineDetails />} />
+            <Route path="/medicine-details/:id" element={<MedicineDetails />} />
           </Routes>
         </div>
       </XyzTransition>
