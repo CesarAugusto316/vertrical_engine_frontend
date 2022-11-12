@@ -37,9 +37,9 @@
   transform: translateY(-50%);
   height: 100%;
   display: block;
+  border: 1px solid var(--base-shadow);
   border-bottom-right-radius: 1rem;
   border-top-right-radius: 1rem;
-  border-left: 1px solid var(--base-shadow);
   padding: 1rem;
   background-color: var(--base-150);
 }
