@@ -21,7 +21,7 @@ export interface Medicine {
 class SearchService {
   private http = axios.create({
     baseURL: import.meta.env.VITE_API_URL,
-    timeout: 25_000,
+    timeout: 20_000,
   });
 
   async queryMedicine(medicineQuery: string): Promise<{ medicines: Medicine[] }> {

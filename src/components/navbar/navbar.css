@@ -14,20 +14,20 @@
   border-radius: 1.6rem;
 }
 
-.navbar__icon {
-  cursor: pointer;
-  font-size: 2.6rem;
+.navbar__logo {
   transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+  display: flex;
+  align-items: center;
 }
 
-.navbar__icon:hover {
-  transform: scale(1.2);
+.navbar__logo:hover {
+  opacity: 0.78;
 }
 
 .navbar__heading {
   font-weight: 800;
-  font-size: 2.6rem;
-  letter-spacing: 1px;
+  font-size: 2.5rem;
+  letter-spacing: 0px;
 }
 
 @media screen and (max-width: 900px) {
