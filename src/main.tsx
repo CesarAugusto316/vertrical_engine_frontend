@@ -4,12 +4,13 @@ import { App } from './App';
 import './index.css';
 
 
-// API Mock Server Worker for Development
+// Mock Service Worker for Development
 if (import.meta.env.DEV) {
   const { browserWorker } = await import('./mocks/browserWorker');
   browserWorker.start();
 }
 
+// comment React.StrictMode to prevent rerendering
 ReactDOM
   .createRoot(document.getElementById('root') as HTMLElement)
   .render(

@@ -4,30 +4,10 @@
   font-size: 62.5%;
   box-sizing: border-box;
   --font-family: "DM Sans", sans-serif;
-  --primary: rgb(55, 124, 251);
-  --primary-focus: rgb(5, 87, 240);
-  --primary-content: rgb(28, 40, 63);
-  --secondary: rgb(102, 204, 138);
-  --secondary-focus: rgb(61, 184, 104);
-  --secondary-content: rgb(40, 71, 56);
-  --accent: rgb(234, 82, 52);
-  --neutral: rgb(28, 28, 30);
-  --neutral-content: rgb(148, 152, 203);
-  --primary-shadow: rgba(3, 69, 190, 0.6);
-}
-
-/* 
-[data-theme="dark"] {
-  --base-100: rgb(23, 27, 35);
-  --base-150: rgb(42, 48, 60);
-  --base-200: rgb(36, 41, 51);
-  --base-300: rgb(31, 36, 45);
-  --base-400: rgb(15, 15, 27);
-  --base-content: rgb(166, 173, 186);
-  --base-shadow: rgba(35, 35, 35, 0.4);
-} */
-
-[data-theme="light"] {
+  --primary: rgb(74, 179, 186);
+  --primary-focus: rgb(19, 153, 162);
+  --primary-shadow: rgba(74, 179, 186, 0.4);
+  --warning: rgba(240, 52, 39, 0.35);
   --base-100: rgb(253, 253, 253);
   --base-150: rgb(247, 247, 247);
   --base-200: rgb(230, 230, 230);
@@ -79,11 +59,6 @@ a {
   max-width: 100%;
   margin-top: 6.2rem;
   padding: 4rem;
-}
-
-*:focus {
-  outline: 2px solid var(--primary);
-  box-shadow: 0px 0px 10px 0px var(--primary-shadow);
 }
 
 @media screen and (max-width: 900px) {
