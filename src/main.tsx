@@ -1,3 +1,4 @@
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { App } from './App';
@@ -12,15 +13,15 @@ if (import.meta.env.DEV) {
   browserWorker.start();
 }
 
-// comment React.StrictMode to prevent rerendering
+// comment React.StrictMode to prevent Rerendering animations
 ReactDOM
   .createRoot(document.getElementById('root') as HTMLElement)
   .render(
-    // <React.StrictMode>
-    <MedicineProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </MedicineProvider>
-    // </React.StrictMode>
+    <React.StrictMode>
+      <MedicineProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </MedicineProvider>
+    </React.StrictMode>
   );
