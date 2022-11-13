@@ -2,7 +2,8 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 2.2rem;
+  margin-top: 25rem;
+  height: 100%;
 }
 
 .home__title {
