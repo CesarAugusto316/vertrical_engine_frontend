@@ -18,7 +18,7 @@ export const Search: FC = () => {
       initialValues={{ title: '' }}
       validationSchema={validationSchemma}
       onSubmit={(values, { resetForm, setSubmitting }) => {
-        fetchMedicines(values.title);
+        fetchMedicines(values.title.trim());
         resetForm();
         setSubmitting(false);
       }}>

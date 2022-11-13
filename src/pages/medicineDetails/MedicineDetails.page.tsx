@@ -8,7 +8,6 @@ import './medicine-details.css';
 
 
 export const MedicineDetails: FC = () => {
-  const [imageLoad, setImageLoad] = useState(false);
   const { id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const [medicine, setMedicine] = useState({} as Medicine);
@@ -16,7 +15,6 @@ export const MedicineDetails: FC = () => {
   useEffect(() => {
     searchService.getMedicineByID(id as string)
       .then(({ medicine }) => {
-        console.log(medicine);
         setMedicine(medicine);
       })
       .catch(error => {
@@ -29,35 +27,31 @@ export const MedicineDetails: FC = () => {
   }, []);
 
   return (
-    <div className="medicine-details">
-      <Skeleton />
-      <h1 className="medicine-details__title">Medicine Details</h1>
+    <>
       <Link className="link medicine-details_left-arrow" to="/">
         <FaArrowLeft />
         <span>BACK</span>
       </Link>
+      <div className="medicine-details">
+        <h1 className="medicine-details__title">Medicine Details</h1>
 
-      {/* There is little bug here, skeleton is not rendering */}
-
-      {isLoading && <Skeleton className="card-details" />}
-      {!isLoading && medicine && (
         <div className="card-details">
           <div className="card-details__body">
-            <h2 className="card-details__title">{medicine.title}</h2>
-            <p className="card-details__description">{medicine.description}</p>
+            <h2 className="card-details__title">{isLoading ? <Skeleton /> : medicine.title}</h2>
+            <p className="card-details__description">{isLoading ? <Skeleton count={3} /> : medicine.description}</p>
           </div>
 
-          <figure className="card-details__image">
-            {!imageLoad &&
-              <Skeleton
-                height="100%"
-                containerClassName="avatar-skeleton"
+          <figure className="card-details__image-box">
+            {isLoading ? <Skeleton className="card-details__image" /> :
+              <img
+                className="card-details__image"
+                src={medicine.photo.url}
+                alt={medicine.title}
               />
             }
-            <img onLoad={() => setImageLoad(true)} src={medicine.photo.url} alt={medicine.title} loading="lazy" />
           </figure>
         </div>
-      )}
-    </div>
+      </div>
+    </>
   );
 };

@@ -49,6 +49,7 @@ ul {
 }
 
 .section {
+  position: relative;
   height: 100vh;
   max-width: 100%;
   padding: 2rem;

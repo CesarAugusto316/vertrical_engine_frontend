@@ -8,33 +8,36 @@
   height: 10rem;
 }
 
-.card__image {
+.card__image-box {
   flex: 1 1 10rem;
 }
 
-.card__body {
-  flex: 1 1 70%;
-  padding: 1.6rem;
-  overflow-x: hidden;
-}
-
-.card__image img {
+.card__image {
   display: block;
   max-width: 100%;
   height: 100%;
 }
 
+.card__body {
+  flex: 1 1 70%;
+  padding: 1.6rem;
+  overflow: hidden;
+}
+
 .card__title {
+  display: flex;
+  flex-wrap: nowrap;
+  max-width: 100%;
   font-size: 1.8rem;
   text-transform: uppercase;
-  white-space: nowrap;
   overflow: hidden;
-  text-overflow: clip;
+  text-overflow: hidden;
   margin-bottom: 0.4rem;
 }
 
 .card__descrtiption {
-  overflow-y: hidden;
+  max-width: 100%;
+  overflow: hidden;
   text-transform: lowercase;
   text-overflow: ellipsis;
 }
