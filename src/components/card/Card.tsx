@@ -27,7 +27,7 @@ export const Card: FC<{ medicine: Medicine }> = ({ medicine }) => {
       <div className="card__body">
         <Link className="link" to={`medicine-details/${medicine.id}`}>
           <h4 className="card__title" title={medicine.title}>
-            {medicine.title.split(' ').slice(0, 2).join(' ')}
+            {medicine.title}
           </h4>
         </Link>
         <p className="card__descrtiption">{medicine.shortDescription}</p>
