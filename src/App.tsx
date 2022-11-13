@@ -14,7 +14,6 @@ export const App: FC = () => {
   return (
     <Layout>
       <Navbar />
-
       <XyzTransition
         appear
         xyz="fade small-5 in-left-25% out-right-25% duration-4 ease-out"

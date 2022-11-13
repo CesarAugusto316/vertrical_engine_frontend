@@ -28,6 +28,8 @@
   display: flex;
   max-width: 96rem;
   gap: 4rem;
+  height: 38rem;
+  overflow-y: hidden;
 }
 
 .card-details__title {

@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { App } from './App';
 import { MedicineProvider } from './context/MedicineProvider';
 import './index.css';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 
 // Mock Service Worker for Development
