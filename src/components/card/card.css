@@ -9,7 +9,7 @@
 }
 
 .card__image-box {
-  flex: 1 1 10rem;
+  flex: 1 1 12rem;
 }
 
 .card__image {
@@ -26,18 +26,13 @@
 
 .card__title {
   display: flex;
-  flex-wrap: nowrap;
-  max-width: 100%;
   font-size: 1.8rem;
   text-transform: uppercase;
   overflow: hidden;
-  text-overflow: hidden;
   margin-bottom: 0.4rem;
 }
 
 .card__descrtiption {
-  max-width: 100%;
   overflow: hidden;
   text-transform: lowercase;
-  text-overflow: ellipsis;
 }

@@ -37,8 +37,12 @@ export const MedicineDetails: FC = () => {
 
         <div className="card-details">
           <div className="card-details__body">
-            <h2 className="card-details__title">{isLoading ? <Skeleton /> : medicine.title}</h2>
-            <p className="card-details__description">{isLoading ? <Skeleton count={3} /> : medicine.description}</p>
+            <h2 className="card-details__title">
+              {isLoading ? <Skeleton /> : medicine.title}
+            </h2>
+            <p className="card-details__description">
+              {isLoading ? <Skeleton count={3} /> : medicine.description}
+            </p>
           </div>
 
           <figure className="card-details__image-box">
