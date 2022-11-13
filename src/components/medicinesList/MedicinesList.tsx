@@ -9,12 +9,16 @@ export const MedicinesList: FC = () => {
   const { medicines, isLoading } = useMedicines();
 
   return (
-    <div className="medicines-list" role="list" title="medicines list">
+    <div
+      className="medicines-list"
+      role="list"
+      title="medicines list"
+    >
       <h1 className="medicines-list__title">Medicines List</h1>
       <div className="medicines-list__body">
         {medicines.map((medicine) => {
           return (
-            isLoading ? <Skeleton className="card" /> :
+            isLoading ? <Skeleton key={medicine.id} className="card" /> :
               <Card key={medicine.id} medicine={medicine} />
           );
         })}

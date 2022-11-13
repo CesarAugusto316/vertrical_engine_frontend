@@ -10,7 +10,7 @@ export const Home: FC = () => {
   return (
     <div className="home">
       <main className="main">
-        <h1 className="home__title">Results {medicines.length > 0 && medicines.length}</h1>
+        <h1 className="home__title">Results {medicines.length}</h1>
         <MedicinesList />
       </main>
     </div>
