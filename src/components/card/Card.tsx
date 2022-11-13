@@ -10,19 +10,25 @@ export const Card: FC<{ medicine: Medicine }> = ({ medicine }) => {
 
   return (
     <div className="card">
-      <Link className="card__image link" to={`medicine-details/${medicine.id}`}>
+      <Link className="card__image-box link" to={`medicine-details/${medicine.id}`}>
         {!imageLoad &&
           <Skeleton
-            height="100%"
-            containerClassName="avatar-skeleton"
+            className="card__image"
           />
         }
-        <img onLoad={() => setImageLoad(true)} src={medicine.photo.url} alt={medicine.title} loading="lazy" />
+        <img
+          className="card__image"
+          onLoad={() => setImageLoad(true)}
+          src={medicine.photo.url}
+          alt={medicine.title}
+        />
       </Link>
 
       <div className="card__body">
         <Link className="link" to={`medicine-details/${medicine.id}`}>
-          <h4 className="card__title" title={medicine.title}>{medicine.title}</h4>
+          <h4 className="card__title" title={medicine.title}>
+            {medicine.title.split(' ').slice(0, 2).join(' ')}
+          </h4>
         </Link>
         <p className="card__descrtiption">{medicine.shortDescription}</p>
       </div>
