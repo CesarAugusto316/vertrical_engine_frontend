@@ -24,8 +24,7 @@ export const routeHandlers = [
           })
         })
     );
-  }
-  ),
+  }),
   rest.get(import.meta.env.VITE_API_URL + '/medicines/search', (req, res, ctx) => {
     const medicineQuery = req.url.searchParams.get('title');
     console.log(medicineQuery);
@@ -45,6 +44,26 @@ export const routeHandlers = [
             shortDescription: faker.lorem.sentence(3),
           });
         })
+      })
+    );
+  }),
+  rest.get(import.meta.env.VITE_API_URL + '/medicines/:id', (req, res, ctx) => {
+    const { id } = req.params;
+    console.log(id);
+
+    return res(
+      ctx.status(200),
+      ctx.json({
+        medicine: {
+          id: id,
+          title: faker.commerce.productName(),
+          description: faker.commerce.productDescription(),
+          photo: {
+            url: 'https://dummyimage.com/640x480.png/999999/eeeeee',
+            id: faker.database.mongodbObjectId()
+          },
+          shortDescription: faker.lorem.sentence(3),
+        }
       })
     );
   })

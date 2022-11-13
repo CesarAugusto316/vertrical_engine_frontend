@@ -40,8 +40,12 @@ ul {
   list-style: none;
 }
 
-a {
+.link:link,
+.link:visited,
+.link:hover,
+.link:active {
   text-decoration: none;
+  color: var(--accent);
 }
 
 .section {
