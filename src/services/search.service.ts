@@ -26,11 +26,7 @@ class SearchService {
 
   async queryMedicine(medicineQuery: string): Promise<{ medicines: Medicine[] }> {
     return new Promise((resolve, reject) => {
-      this.http.get('/medicines/search', {
-        params: {
-          title: medicineQuery
-        }
-      })
+      this.http.post(`/medicines/search?title=${medicineQuery}`,)
         .then(({ data }) => {
           resolve(data);
         })
