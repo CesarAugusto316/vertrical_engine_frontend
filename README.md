@@ -49,7 +49,7 @@ Mock Service Worker operates client-side by registering a Service Worker respons
 npx msw init public/
 ```
 
-![plot](<./src/assets/chrome-capture-2022-10-12%20(1).gif>)
+![plot](./src/assets/chrome-capture-2022-10-13.gif)
 
 ## Author
 

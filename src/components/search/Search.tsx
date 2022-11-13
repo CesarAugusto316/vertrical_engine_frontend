@@ -27,6 +27,7 @@ export const Search: FC = () => {
           <Field name="title">
             {({ field }: FieldProps) => (
               <input
+                role="search"
                 type="text"
                 className="form__input"
                 placeholder="Search Medicine..."

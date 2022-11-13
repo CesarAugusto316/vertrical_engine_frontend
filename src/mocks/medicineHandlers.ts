@@ -13,7 +13,7 @@ export const routeHandlers = [
           medicines: [...Array(80).keys()].map(i => {
             return ({
               id: i + 1,
-              title: faker.commerce.productName(),
+              title: 'test medicine',
               description: faker.commerce.productDescription(),
               photo: {
                 url: 'https://dummyimage.com/640x480.png/999999/eeeeee',
@@ -34,7 +34,7 @@ export const routeHandlers = [
       ctx.json({
         medicine: {
           id: id,
-          title: faker.commerce.productName(),
+          title: 'test medicine',
           description: faker.commerce.productDescription(),
           photo: {
             url: 'https://dummyimage.com/640x480.png/999999/eeeeee',
@@ -55,7 +55,7 @@ export const routeHandlers = [
         medicines: [...Array(6).keys()].map(i => {
           return ({
             id: i + 1,
-            title: faker.commerce.productName(),
+            title: 'test medicine',
             description: faker.commerce.productDescription(),
             photo: {
               url: 'https://dummyimage.com/640x480.png/999999/eeeeee',
